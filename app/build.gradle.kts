@@ -30,7 +30,7 @@ kotlin {
 
   jvm("desktop")
 
-  wasmJs {
+  wasmJs("web") {
     moduleName = "trak"
     browser {
       commonWebpackConfig {
