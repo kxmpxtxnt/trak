@@ -1,0 +1,17 @@
+[versions]
+ktor = "3.0.0"
+
+[libraries]
+ktor-server-cio = { group = "io.ktor", name = "ktor-server-cio-jvm", version.ref = "ktor" }
+ktor-server-core = { group = "io.ktor", name = "ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-tests = { group = "io.ktor", name = "ktor-server-tests-jvm", version = "2.3.9" }
+
+[plugins]
+ktor = { id = "io.ktor.plugin", version = "3.0.0" }
+
+[bundles]
+ktor = [
+    "ktor-server-cio",
+    "ktor-server-core",
+    "ktor-server-tests"
+]
