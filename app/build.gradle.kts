@@ -69,6 +69,7 @@ kotlin {
     androidMain.dependencies {
       implementation(compose.preview)
       implementation(agp.androidx.activity.compose)
+      implementation(agp.androidx.navigation.compose)
     }
   }
 }
