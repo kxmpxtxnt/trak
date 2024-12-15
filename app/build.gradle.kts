@@ -79,8 +79,7 @@ kotlin {
       implementation(koin.android)
       implementation(koin.androidx.compose.navigation)
 
-      implementation(agp.androidx.activity.compose)
-      implementation(agp.androidx.navigation.compose)
+      implementation(agp.bundles.androidx)
     }
   }
 }
