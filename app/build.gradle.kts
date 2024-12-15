@@ -74,18 +74,17 @@ kotlin {
     androidMain.dependencies {
       implementation(compose.preview)
 
-      implementation(room.bundles.room)
-
       implementation(koin.android)
       implementation(koin.androidx.compose.navigation)
 
+      implementation(agp.bundles.room)
       implementation(agp.bundles.androidx)
     }
   }
 }
 
 dependencies {
-  add("kspAndroid", room.compiler)
+  add("kspAndroid", agp.room.compiler)
   debugImplementation(compose.uiTooling)
 }
 
@@ -126,4 +125,8 @@ compose.desktop {
       packageVersion = rootProject.version.toString()
     }
   }
+}
+
+configurations {
+
 }

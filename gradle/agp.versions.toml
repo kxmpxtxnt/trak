@@ -1,8 +1,9 @@
 [versions]
 agp = "8.6.1"
-android-compileSdk = "34"
+room = "2.6.1"
 android-minSdk = "24"
 android-targetSdk = "34"
+android-compileSdk = "34"
 androidx-lifecycle = "2.8.3"
 androidx-material = "1.12.0"
 androidx-appcompat = "1.7.0"
@@ -27,13 +28,17 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+
 [plugins]
 library = { id = "com.android.library", version.ref = "agp" }
 appplication = { id = "com.android.application", version.ref = "agp" }
 
 [bundles]
 androidx = [
-    "androidx-core-ktx",
     "androidx-material",
     "androidx-datastore",
     "androidx-appcompat",
@@ -44,4 +49,9 @@ androidx = [
     "androidx-navigation-compose",
     "androidx-lifecycle-viewmodel",
     "androidx-lifecycle-runtime-compose",
+]
+
+room = [
+    "room-ktx",
+    "room-runtime",
 ]
