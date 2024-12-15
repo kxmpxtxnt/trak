@@ -1,4 +1,4 @@
-package fyi.pauli.trak.ui.theme
+package fyi.pauli.trak.ui.themes.you
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -84,7 +84,6 @@ private val darkScheme = darkColorScheme(
   surfaceContainerHighest = surfaceContainerHighestDark,
 )
 
-@Suppress("UNUSED")
 private val mediumContrastLightColorScheme = lightColorScheme(
   primary = primaryLightMediumContrast,
   onPrimary = onPrimaryLightMediumContrast,
@@ -123,7 +122,6 @@ private val mediumContrastLightColorScheme = lightColorScheme(
   surfaceContainerHighest = surfaceContainerHighestLightMediumContrast,
 )
 
-@Suppress("UNUSED")
 private val highContrastLightColorScheme = lightColorScheme(
   primary = primaryLightHighContrast,
   onPrimary = onPrimaryLightHighContrast,
@@ -162,7 +160,6 @@ private val highContrastLightColorScheme = lightColorScheme(
   surfaceContainerHighest = surfaceContainerHighestLightHighContrast,
 )
 
-@Suppress("UNUSED")
 private val mediumContrastDarkColorScheme = darkColorScheme(
   primary = primaryDarkMediumContrast,
   onPrimary = onPrimaryDarkMediumContrast,
@@ -201,7 +198,6 @@ private val mediumContrastDarkColorScheme = darkColorScheme(
   surfaceContainerHighest = surfaceContainerHighestDarkMediumContrast,
 )
 
-@Suppress("UNUSED")
 private val highContrastDarkColorScheme = darkColorScheme(
   primary = primaryDarkHighContrast,
   onPrimary = onPrimaryDarkHighContrast,
@@ -248,13 +244,12 @@ data class ColorFamily(
   val onColorContainer: Color,
 )
 
-@Suppress("UNUSED")
 val unspecified_scheme = ColorFamily(
   Color.Unspecified, Color.Unspecified, Color.Unspecified, Color.Unspecified
 )
 
 @Composable
-fun AppTheme(
+fun YouTheme(
   darkTheme: Boolean = isSystemInDarkTheme(),
   dynamicColor: Boolean = true,
   content: @Composable () -> Unit,
@@ -270,6 +265,9 @@ fun AppTheme(
   }
 
   MaterialTheme(
-    colorScheme = colorScheme, typography = AppTypography, content = content
+    colorScheme = colorScheme,
+    typography = Typography(),
+    content = content
   )
 }
+
