@@ -5,12 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import fyi.pauli.trak.ui.themes.AppTheme
+import fyi.pauli.trak.onboarding.steps.Menstruation
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
-import org.koin.core.context.GlobalContext.get
 import org.koin.core.context.startKoin
-import org.koin.dsl.module
 
 class TrakActivity : ComponentActivity() {
 
@@ -20,9 +18,6 @@ class TrakActivity : ComponentActivity() {
     startKoin {
       androidLogger()
       androidContext(this@TrakActivity)
-      modules(module {
-        single { AppTheme() }
-      })
     }
 
     setContent {
@@ -33,6 +28,6 @@ class TrakActivity : ComponentActivity() {
 
 @Preview
 @Composable
-fun Trak(theme: AppTheme = get().get()) = theme {
-
+fun Trak() {
+  Menstruation()
 }

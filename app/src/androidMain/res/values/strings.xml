@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name" translatable="false">trak</string>
+    <string name="app_name">trak</string>
+    <string name="onboarding_intro_title">Intro</string>
+    <string name="onboarding_intro_text">
+        Trak makes it easier for you to track your diet, your sport and, if applicable, your period.\nTo make this as
+        good as possible, we first need some information from you.\n\nAll this data will only be stored in encrypted
+        form for data processing and will not be passed on to third parties. \nIt can be deleted and changed at any
+        time.
+    </string>
+    <string name="onboarding_menstruation_title">Menstruation</string>
+    <string name="onboarding_menstruation_text">Is your body able to menstruate?</string>
 </resources>
