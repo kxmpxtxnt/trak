@@ -4,10 +4,9 @@ import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Immutable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
+@Suppress("UNUSED")
 private val lightScheme = lightColorScheme(
   primary = primaryLight,
   onPrimary = onPrimaryLight,
@@ -46,6 +45,7 @@ private val lightScheme = lightColorScheme(
   surfaceContainerHighest = surfaceContainerHighestLight,
 )
 
+@Suppress("UNUSED")
 private val darkScheme = darkColorScheme(
   primary = primaryDark,
   onPrimary = onPrimaryDark,
@@ -84,6 +84,7 @@ private val darkScheme = darkColorScheme(
   surfaceContainerHighest = surfaceContainerHighestDark,
 )
 
+@Suppress("UNUSED")
 private val mediumContrastLightColorScheme = lightColorScheme(
   primary = primaryLightMediumContrast,
   onPrimary = onPrimaryLightMediumContrast,
@@ -122,6 +123,7 @@ private val mediumContrastLightColorScheme = lightColorScheme(
   surfaceContainerHighest = surfaceContainerHighestLightMediumContrast,
 )
 
+@Suppress("UNUSED")
 private val highContrastLightColorScheme = lightColorScheme(
   primary = primaryLightHighContrast,
   onPrimary = onPrimaryLightHighContrast,
@@ -160,6 +162,7 @@ private val highContrastLightColorScheme = lightColorScheme(
   surfaceContainerHighest = surfaceContainerHighestLightHighContrast,
 )
 
+@Suppress("UNUSED")
 private val mediumContrastDarkColorScheme = darkColorScheme(
   primary = primaryDarkMediumContrast,
   onPrimary = onPrimaryDarkMediumContrast,
@@ -198,6 +201,7 @@ private val mediumContrastDarkColorScheme = darkColorScheme(
   surfaceContainerHighest = surfaceContainerHighestDarkMediumContrast,
 )
 
+@Suppress("UNUSED")
 private val highContrastDarkColorScheme = darkColorScheme(
   primary = primaryDarkHighContrast,
   onPrimary = onPrimaryDarkHighContrast,
@@ -234,18 +238,6 @@ private val highContrastDarkColorScheme = darkColorScheme(
   surfaceContainer = surfaceContainerDarkHighContrast,
   surfaceContainerHigh = surfaceContainerHighDarkHighContrast,
   surfaceContainerHighest = surfaceContainerHighestDarkHighContrast,
-)
-
-@Immutable
-data class ColorFamily(
-  val color: Color,
-  val onColor: Color,
-  val colorContainer: Color,
-  val onColorContainer: Color,
-)
-
-val unspecified_scheme = ColorFamily(
-  Color.Unspecified, Color.Unspecified, Color.Unspecified, Color.Unspecified
 )
 
 @Composable
