@@ -1,4 +1,5 @@
 plugins {
+  alias(google.plugins.ksp) apply false
   alias(ktorio.plugins.ktor) apply false
   alias(agp.plugins.library) apply false
   alias(agp.plugins.appplication) apply false

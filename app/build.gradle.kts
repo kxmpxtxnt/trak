@@ -6,6 +6,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
+  alias(google.plugins.ksp)
   alias(agp.plugins.appplication)
   alias(jetbrains.plugins.kotlin.compose)
   alias(jetbrains.plugins.kotlin.multiplatform)
@@ -50,14 +51,18 @@ kotlin {
     commonMain.dependencies {
       implementation(compose.ui)
       implementation(compose.runtime)
-      implementation(compose.material)
-      implementation(compose.material)
       implementation(compose.material3)
       implementation(compose.foundation)
       implementation(compose.components.resources)
       implementation(compose.materialIconsExtended)
       implementation(compose.components.uiToolingPreview)
       implementation(compose.material3AdaptiveNavigationSuite)
+
+      implementation(koin.core)
+      implementation(koin.compose)
+      implementation(koin.compose.viewmodel.navigation)
+
+      implementation(agp.androidx.constraintlayout)
     }
 
     val desktopMain by getting {
@@ -68,6 +73,12 @@ kotlin {
 
     androidMain.dependencies {
       implementation(compose.preview)
+
+      implementation(room.bundles.room)
+
+      implementation(koin.android)
+      implementation(koin.androidx.compose.navigation)
+
       implementation(agp.androidx.activity.compose)
       implementation(agp.androidx.navigation.compose)
     }
@@ -75,6 +86,7 @@ kotlin {
 }
 
 dependencies {
+  add("kspAndroid", room.compiler)
   debugImplementation(compose.uiTooling)
 }
 
