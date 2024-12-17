@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -15,7 +16,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import fyi.pauli.trak.R
+import fyi.pauli.trak.R.drawable
+import fyi.pauli.trak.R.string
 import fyi.pauli.trak.theme.AppTheme
 import fyi.pauli.trak.ui.theme.Theme
 
@@ -24,13 +26,21 @@ enum class Onboarding(
   val textResource: Int,
   val painterResource: Int,
   val theme: Theme,
+  enableNextButton: Boolean,
 ) {
-  INTRO(R.string.onboarding_intro_title, R.string.onboarding_intro_text, R.drawable.onboarding_intro, Theme.YOU),
+  INTRO(
+    string.onboarding_intro_title,
+    string.onboarding_intro_text,
+    drawable.onboarding_intro,
+    Theme.YOU,
+    false
+  ),
   MENSTRUATION(
-    R.string.onboarding_menstruation_title,
-    R.string.onboarding_menstruation_text,
-    R.drawable.onboarding_menstruation,
-    Theme.MENSTRUATION
+    string.onboarding_menstruation_title,
+    string.onboarding_menstruation_text,
+    drawable.onboarding_menstruation,
+    Theme.MENSTRUATION,
+    true
   ),
   //BODY,
   //TRAINING,
@@ -39,50 +49,55 @@ enum class Onboarding(
 @Composable
 fun OnboardingScreen(
   onboarding: Onboarding,
-  options: @Composable () -> Unit = {},
+  capture: @Composable () -> Unit = {},
 ) = AppTheme(onboarding.theme) {
   val title = stringResource(onboarding.titleResource)
   val text = stringResource(onboarding.textResource)
 
-  Column(
-    modifier = Modifier
-      .fillMaxSize()
-      .background(MaterialTheme.colorScheme.background),
-    horizontalAlignment = Alignment.CenterHorizontally
+  Scaffold(
+    floatingActionButton = {
+
+    }
   ) {
-    Spacer(Modifier.size(45.dp))
-
-    Text(
-      text = title,
-      fontWeight = FontWeight.Normal,
-      fontSize = 50.sp,
-      color = MaterialTheme.colorScheme.primary
-    )
-
-    Image(
-      painter = painterResource(onboarding.painterResource),
-      "Onboarding image for the $title setup.",
+    Column(
       modifier = Modifier
-        .size(350.dp)
-    )
-
-    Spacer(Modifier.size(20.dp))
-    Box(
-      Modifier
-        .padding(horizontal = 20.dp)
-        .clip(RoundedCornerShape(25.dp))
-        .background(MaterialTheme.colorScheme.secondaryContainer)
+        .fillMaxSize()
+        .background(MaterialTheme.colorScheme.background),
+      horizontalAlignment = Alignment.CenterHorizontally
     ) {
+      Spacer(Modifier.size(20.dp))
+
       Text(
-        text = text,
-        modifier = Modifier.padding(25.dp),
-        fontWeight = FontWeight.Thin,
-        fontSize = 25.sp,
+        text = title,
+        fontWeight = FontWeight.Normal,
+        fontSize = 50.sp,
         color = MaterialTheme.colorScheme.primary
       )
-    }
-    Spacer(Modifier.size(50.dp))
 
-    options()
+      Image(
+        painter = painterResource(onboarding.painterResource),
+        "Onboarding image for the $title setup.",
+        modifier = Modifier
+          .size(350.dp)
+      )
+
+      Box(
+        Modifier
+          .padding(horizontal = 10.dp)
+          .clip(RoundedCornerShape(25.dp))
+          .background(MaterialTheme.colorScheme.secondaryContainer)
+      ) {
+        Text(
+          text = text,
+          modifier = Modifier.padding(25.dp),
+          fontWeight = FontWeight.Normal,
+          fontSize = 20.sp,
+          color = MaterialTheme.colorScheme.primary
+        )
+      }
+      Spacer(Modifier.size(20.dp))
+
+      capture()
+    }
   }
 }

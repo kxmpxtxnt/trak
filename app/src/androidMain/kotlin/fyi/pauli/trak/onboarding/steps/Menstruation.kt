@@ -1,21 +1,12 @@
 package fyi.pauli.trak.onboarding.steps
 
-import androidx.compose.material3.Switch
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import fyi.pauli.trak.onboarding.Onboarding
 import fyi.pauli.trak.onboarding.OnboardingScreen
 
-
+@Preview
 @Composable
-fun Menstruation() {
-  OnboardingScreen(Onboarding.MENSTRUATION) {
-    var checked by remember { mutableStateOf(true) }
+fun Menstruation() = OnboardingScreen(Onboarding.MENSTRUATION) {
 
-    Switch(
-      checked = checked,
-      onCheckedChange = {
-        checked = it
-      },
-    )
-  }
 }

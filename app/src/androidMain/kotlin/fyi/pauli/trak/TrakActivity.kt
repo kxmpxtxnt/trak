@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import fyi.pauli.trak.onboarding.steps.Menstruation
+import fyi.pauli.trak.onboarding.steps.Intro
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -29,5 +29,5 @@ class TrakActivity : ComponentActivity() {
 @Preview
 @Composable
 fun Trak() {
-  Menstruation()
+  Intro()
 }
