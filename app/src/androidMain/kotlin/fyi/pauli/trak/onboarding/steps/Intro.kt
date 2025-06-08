@@ -1,16 +1,16 @@
 package fyi.pauli.trak.onboarding.steps
 
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import fyi.pauli.trak.R
@@ -24,9 +24,8 @@ fun Intro(navController: NavController) = OnboardingScreen(Onboarding.INTRO, nav
   StepWithSuccessor(
     condition = agreed,
     navController = navController,
-    successor = Onboarding.MENSTRUATION
+    successor = Onboarding.MEASUREMENTS
   ) {
-    Spacer(Modifier.size(10.dp))
     Row {
       Checkbox(checked = agreed, onCheckedChange = { agreed = it })
 

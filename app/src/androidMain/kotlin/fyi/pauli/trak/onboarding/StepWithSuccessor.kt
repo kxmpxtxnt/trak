@@ -23,9 +23,7 @@ fun StepWithSuccessor(
     Scaffold(
         floatingActionButton = {
             Button(
-                onClick = {
-                    navController.navigate(successor.name)
-                },
+                onClick = { navController.navigate(successor.name) },
                 modifier = Modifier.defaultMinSize(minWidth = 56.dp, minHeight = 56.dp),
                 enabled = condition,
                 shape = CircleShape

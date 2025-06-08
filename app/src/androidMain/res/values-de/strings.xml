@@ -11,4 +11,8 @@
     <string name="onboarding_intro_agree">Ich erkläre mich mit den oben genannten Verwendungszwecken einverstanden.
     </string>
     <string name="onboarding_intro_next">Weiter</string>
+    <string name="onboarding_measurements_title">Alter</string>
+    <string name="onboarding_measurements_text">Um Ihre korrekten Vitaldaten zu ermitteln, benötigen wir Ihr Alter.</string>
+    <string name="general_yes">Ja</string>
+    <string name="general_no">Nein</string>
 </resources>
