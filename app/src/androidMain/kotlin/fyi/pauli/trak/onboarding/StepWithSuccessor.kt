@@ -31,7 +31,7 @@ fun StepWithSuccessor(
                 Text(stringResource(R.string.onboarding_intro_next), fontSize = 20.sp)
             }
         }
-    ) {
+    ) { padding ->
         currentPage()
     }
 }
