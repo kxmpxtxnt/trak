@@ -8,15 +8,15 @@ import fyi.pauli.trak.ui.theme.Theme
 
 @Composable
 fun AppTheme(
-  theme: Theme,
-  content: @Composable () -> Unit,
+    theme: Theme,
+    content: @Composable () -> Unit,
 ) {
-  MaterialTheme(
-    colorScheme = when {
-      isSystemInDarkTheme() -> theme.darkScheme
-      else -> theme.lightScheme
-    },
-    typography = MontserratTypography(),
-    content = content
-  )
+    MaterialTheme(
+        colorScheme = when {
+            isSystemInDarkTheme() -> theme.darkScheme
+            else -> theme.lightScheme
+        },
+        typography = MontserratTypography(),
+        content = content
+    )
 }

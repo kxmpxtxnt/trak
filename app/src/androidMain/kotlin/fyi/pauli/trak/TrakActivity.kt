@@ -20,37 +20,37 @@ import org.koin.core.context.startKoin
 
 class TrakActivity : ComponentActivity() {
 
-  @RequiresApi(Build.VERSION_CODES.O)
-  override fun onCreate(savedInstanceState: Bundle?) {
-    super.onCreate(savedInstanceState)
+    @RequiresApi(Build.VERSION_CODES.O)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-    startKoin {
-      androidLogger()
-      androidContext(this@TrakActivity)
-    }
+        startKoin {
+            androidLogger()
+            androidContext(this@TrakActivity)
+        }
 
-    setContent {
-      Trak()
+        setContent {
+            Trak()
+        }
     }
-  }
 }
 
 @RequiresApi(Build.VERSION_CODES.O)
 @Preview
 @Composable
 fun Trak() {
-  val navController = rememberNavController()
-  NavHost(navController, startDestination = Onboarding.INTRO.name) {
-    composable(Onboarding.INTRO.name) {
-      Intro(navController)
-    }
+    val navController = rememberNavController()
+    NavHost(navController, startDestination = Onboarding.INTRO.name) {
+        composable(Onboarding.INTRO.name) {
+            Intro(navController)
+        }
 
-    composable(Onboarding.MEASUREMENTS.name) {
-      BodyMeasurements(navController)
-    }
+        composable(Onboarding.MEASUREMENTS.name) {
+            BodyMeasurements(navController)
+        }
 
-    composable(Onboarding.MENSTRUATION.name) {
-      Menstruation(navController)
+        composable(Onboarding.MENSTRUATION.name) {
+            Menstruation(navController)
+        }
     }
-  }
 }

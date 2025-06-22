@@ -12,7 +12,8 @@
     <string name="onboarding_intro_agree">I agree to the mentioned purposes of use above.</string>
     <string name="onboarding_intro_next">Next</string>
     <string name="onboarding_measurements_title">Age</string>
-    <string name="onboarding_measurements_text">In order to determine your correct vital signs, we need your age.</string>
+    <string name="onboarding_measurements_text">In order to determine your correct vital signs, we need your age.
+    </string>
     <string name="general_yes">Yes</string>
     <string name="general_no">No</string>
 </resources>

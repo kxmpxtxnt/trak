@@ -2,12 +2,7 @@ package fyi.pauli.trak.onboarding.steps
 
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableDoubleStateOf
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.runtime.*
 import androidx.navigation.NavController
 import fyi.pauli.trak.onboarding.Onboarding
 import fyi.pauli.trak.onboarding.OnboardingScreen
