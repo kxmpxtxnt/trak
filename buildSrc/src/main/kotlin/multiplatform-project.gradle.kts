@@ -79,7 +79,7 @@ kotlin {
 
         commonMain {
             dependencies {
-                implementation("io.github.oshai:kotlin-logging:7.0.3")
+                implementation("io.github.oshai:kotlin-logging:7.0.13")
             }
         }
 
