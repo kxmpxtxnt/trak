@@ -29,7 +29,7 @@ dependencies {
     implementation("io.ktor:ktor-serialization-kotlinx-json")
 
     runtimeOnly("ch.qos.logback:logback-classic:1.5.18")
-    implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
+    implementation("io.github.oshai:kotlin-logging-jvm:7.0.13")
 }
 
 sqldelight {
