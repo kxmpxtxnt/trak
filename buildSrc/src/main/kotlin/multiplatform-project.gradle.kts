@@ -59,7 +59,7 @@ kotlin {
 
         commonMain.dependencies {
             implementation("io.github.oshai:kotlin-logging:7.0.13")
-            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1-0.6.x-compat")
             implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0")
             implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
             implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.9.0")
