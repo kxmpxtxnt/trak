@@ -1,31 +1,15 @@
 @file:OptIn(ExperimentalWasmDsl::class)
 
-import com.android.build.api.dsl.androidLibrary
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.dsl.KotlinVersion
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 
 plugins {
     kotlin("multiplatform")
-    id("com.android.kotlin.multiplatform.library")
+    kotlin("plugin.serialization")
 }
 
 kotlin {
-    androidLibrary {
-        namespace = "${project.group}.trak"
-        compileSdk = 36
-        minSdk = 24
-
-        withJava()
-
-        compilerOptions {
-            jvmTarget = JvmTarget.JVM_1_8
-        }
-    }
-
-    explicitApi()
-
     compilerOptions {
         freeCompilerArgs.add("-Xexpect-actual-classes")
 
@@ -34,11 +18,6 @@ kotlin {
     }
 
     jvm()
-
-    linuxX64()
-    linuxArm64()
-
-    mingwX64()
 
     listOf(
         iosX64(),
@@ -75,26 +54,21 @@ kotlin {
     sourceSets {
         all {
             languageSettings.optIn("kotlin.uuid.ExperimentalUuidApi")
+            languageSettings.optIn("kotlinx.serialization.ExperimentalSerializationApi")
         }
 
-        commonMain {
-            dependencies {
-                implementation("io.github.oshai:kotlin-logging:7.0.13")
-            }
+        commonMain.dependencies {
+            implementation("io.github.oshai:kotlin-logging:7.0.13")
+            implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.7.1")
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.9.0")
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.9.0")
+            implementation("org.jetbrains.kotlinx:kotlinx-serialization-protobuf:1.9.0")
         }
 
-        jvmMain {
-            dependencies {
-                runtimeOnly("ch.qos.logback:logback-classic:1.5.18")
-            }
-        }
-
-        commonTest {
-            dependencies {
-                implementation(kotlin("test"))
-                implementation(kotlin("test-common"))
-                implementation(kotlin("test-annotations-common"))
-            }
+        commonTest.dependencies {
+            implementation(kotlin("test"))
+            implementation(kotlin("test-common"))
+            implementation(kotlin("test-annotations-common"))
         }
 
         jvmTest.dependencies {

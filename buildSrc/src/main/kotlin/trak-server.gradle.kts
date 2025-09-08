@@ -4,7 +4,6 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     kotlin("jvm")
     id("io.ktor.plugin")
-    id("app.cash.sqldelight")
 }
 
 kotlin {
@@ -30,15 +29,8 @@ dependencies {
 
     runtimeOnly("ch.qos.logback:logback-classic:1.5.18")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.13")
-}
 
-sqldelight {
-    databases {
-        create("trak") {
-            packageName = project.group.toString()
-            dialect("app.cash.sqldelight:postgresql-dialect:2.1.0")
-        }
-    }
+    implementation(project(":shared"))
 }
 
 application {

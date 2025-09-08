@@ -9,7 +9,7 @@ import fyi.pauli.app.generated.resources.*
 import org.jetbrains.compose.resources.Font
 
 @Composable
-fun MontserratFontFamily() = FontFamily(
+fun montserratFontFamily() = FontFamily(
     Font(Res.font.Montserrat_Black, FontWeight.Black),
     Font(Res.font.Montserrat_BlackItalic, FontWeight.Black, FontStyle.Italic),
 
@@ -39,8 +39,8 @@ fun MontserratFontFamily() = FontFamily(
 )
 
 @Composable
-fun MontserratTypography() = Typography().run {
-    val fontFamily = MontserratFontFamily()
+fun montserratTypography() = Typography().run {
+    val fontFamily = montserratFontFamily()
     copy(
         displayLarge = displayLarge.copy(fontFamily = fontFamily),
         displayMedium = displayMedium.copy(fontFamily = fontFamily),
