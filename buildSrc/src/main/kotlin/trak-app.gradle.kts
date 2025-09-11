@@ -51,10 +51,10 @@ kotlin {
             implementation("io.insert-koin:koin-compose:4.1.1")
             implementation("io.insert-koin:koin-compose-viewmodel-navigation:4.1.1")
 
-            implementation("io.ktor:ktor-serialization-kotlinx-json:3.2.3")
-            implementation("io.ktor:ktor-client-auth:3.2.3")
-            implementation("io.ktor:ktor-client-resources:3.2.3")
-            implementation("io.ktor:ktor-client-content-negotiation:3.2.3")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
+            implementation("io.ktor:ktor-client-auth:3.3.0")
+            implementation("io.ktor:ktor-client-resources:3.3.0")
+            implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
 
             implementation(project(":shared"))
         }
