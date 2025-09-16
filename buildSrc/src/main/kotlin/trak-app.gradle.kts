@@ -74,7 +74,7 @@ kotlin {
             implementation("androidx.navigation:navigation-compose:2.9.3")
             implementation("androidx.constraintlayout:constraintlayout:2.2.1")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.3")
-            implementation("org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.9.3")
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.9.4")
 
             implementation("io.insert-koin:koin-android:4.1.1")
             implementation("io.insert-koin:koin-androidx-compose-navigation:4.1.1")
