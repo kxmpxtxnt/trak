@@ -73,7 +73,7 @@ kotlin {
             implementation("androidx.test.espresso:espresso-core:3.7.0")
             implementation("androidx.navigation:navigation-compose:2.9.3")
             implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-            implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.3")
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.4")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.9.3")
 
             implementation("io.insert-koin:koin-android:4.1.1")
