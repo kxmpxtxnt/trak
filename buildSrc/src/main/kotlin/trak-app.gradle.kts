@@ -71,7 +71,7 @@ kotlin {
             implementation("androidx.datastore:datastore-preferences:1.1.7")
             implementation("androidx.activity:activity-compose:1.10.1")
             implementation("androidx.test.espresso:espresso-core:3.7.0")
-            implementation("androidx.navigation:navigation-compose:2.9.3")
+            implementation("androidx.navigation:navigation-compose:2.9.5")
             implementation("androidx.constraintlayout:constraintlayout:2.2.1")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel:2.9.3")
             implementation("org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose:2.9.3")
