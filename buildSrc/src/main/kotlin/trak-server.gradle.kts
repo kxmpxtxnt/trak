@@ -27,7 +27,7 @@ dependencies {
 
     implementation("io.ktor:ktor-serialization-kotlinx-json")
 
-    runtimeOnly("ch.qos.logback:logback-classic:1.5.18")
+    runtimeOnly("ch.qos.logback:logback-classic:1.5.19")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.13")
 
     implementation(project(":shared"))
