@@ -51,10 +51,10 @@ kotlin {
             implementation("io.insert-koin:koin-compose:4.1.1")
             implementation("io.insert-koin:koin-compose-viewmodel-navigation:4.1.1")
 
-            implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.0")
-            implementation("io.ktor:ktor-client-auth:3.3.0")
-            implementation("io.ktor:ktor-client-resources:3.3.0")
-            implementation("io.ktor:ktor-client-content-negotiation:3.3.0")
+            implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.1")
+            implementation("io.ktor:ktor-client-auth:3.3.1")
+            implementation("io.ktor:ktor-client-resources:3.3.1")
+            implementation("io.ktor:ktor-client-content-negotiation:3.3.1")
 
             implementation(project(":shared"))
         }
@@ -62,8 +62,8 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
 
-            implementation("androidx.room:room-ktx:2.8.1")
-            implementation("androidx.room:room-runtime:2.8.1")
+            implementation("androidx.room:room-ktx:2.8.2")
+            implementation("androidx.room:room-runtime:2.8.2")
 
             implementation("androidx.core:core-ktx:1.17.0")
             implementation("androidx.appcompat:appcompat:1.7.1")
