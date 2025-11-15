@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name" translatable="true">trak</string>
+    <string name="onboarding_intro_title">Einführung</string>
+    <string name="onboarding_intro_text">Trak macht es Ihnen leichter, deine Ernährung, deinen Sport und ggf. deine
+        Periode zu verfolgen. Um dies so gut wie möglich zu tun, benötigen wir zunächst einige Informationen von dir.
+        Alle diese Daten werden nur in verschlüsselter Form zur Datenverarbeitung gespeichert und nicht an Dritte
+        weitergegeben. Sie können jederzeit gelöscht und geändert werden.
+    </string>
+    <string name="onboarding_menstruation_title">Menstruation</string>
+    <string name="onboarding_menstruation_text">Ist dein Körper in der Lage zu menstruieren?</string>
+    <string name="onboarding_intro_agree">Ich erkläre mich mit den oben genannten Verwendungszwecken einverstanden.
+    </string>
+    <string name="onboarding_intro_next">Weiter</string>
+    <string name="onboarding_measurements_title">Alter</string>
+    <string name="onboarding_measurements_text">Um Ihre korrekten Vitaldaten zu ermitteln, benötigen wir Ihr Alter.
+    </string>
+    <string name="general_yes">Ja</string>
+    <string name="general_no">Nein</string>
+</resources>
