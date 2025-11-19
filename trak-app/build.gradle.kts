@@ -69,7 +69,6 @@ kotlin {
             implementation("androidx.core:core-ktx:1.17.0")
             implementation("androidx.room:room-runtime:2.8.3")
             implementation("androidx.appcompat:appcompat:1.7.1")
-            implementation("androidx.core:core-splashscreen:1.2.0")
             implementation("androidx.activity:activity-compose:1.11.0")
             implementation("androidx.compose.material3:material3:1.4.0")
             implementation("androidx.navigation:navigation-compose:2.9.6")
@@ -91,8 +90,8 @@ kotlin {
             implementation("io.insert-koin:koin-android:4.1.1")
             implementation("io.insert-koin:koin-androidx-compose-navigation:4.1.1")
 
-            implementation("cafe.adriel.voyager:voyager-navigator:1.1.0-beta02")
-            implementation("cafe.adriel.voyager:voyager-screenmodel:1.1.0-beta02")
+            implementation("cafe.adriel.voyager:voyager-navigator:1.1.0-beta03")
+            implementation("cafe.adriel.voyager:voyager-screenmodel:1.1.0-beta03")
         }
     }
 }
