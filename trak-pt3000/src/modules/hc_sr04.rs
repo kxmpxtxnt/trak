@@ -7,8 +7,18 @@ pub struct HcSr04<'io> {
     delay: Delay,
 }
 
+#[derive(Debug)]
+pub enum HcSr04Error {
+    Timeout,
+    OutOfRange,
+}
+
 impl<'io> HcSr04<'io> {
-    pub fn new(trigger_pin: impl OutputPin + 'io, echo_pin: impl InputPin + 'io, delay: Delay) -> Self {
+    pub fn new(
+        trigger_pin: impl OutputPin + 'io,
+        echo_pin: impl InputPin + 'io,
+        delay: Delay,
+    ) -> Self {
         Self {
             trigger: Output::new(trigger_pin, Level::Low, OutputConfig::default()),
             echo: Input::new(echo_pin, InputConfig::default().with_pull(Pull::Down)),
@@ -16,7 +26,7 @@ impl<'io> HcSr04<'io> {
         }
     }
 
-    pub fn measure(&mut self, temperature: Option<u8>) -> Option<f32> {
+    pub fn measure(&mut self, temperature: Option<u8>) -> Result<(f32, u8), HcSr04Error> {
         self.trigger.set_high();
         self.delay.delay_micros(10);
         self.trigger.set_low();
@@ -26,7 +36,7 @@ impl<'io> HcSr04<'io> {
             self.delay.delay_micros(1);
             timeout += 1;
             if timeout >= 10_000 {
-                return None;
+                return Err(HcSr04Error::Timeout);
             }
         }
 
@@ -35,15 +45,15 @@ impl<'io> HcSr04<'io> {
             self.delay.delay_micros(1);
             duration += 1;
             if duration >= 30_000 {
-                return None;
+                return Err(HcSr04Error::OutOfRange);
             }
         }
 
-        let temp = temperature.unwrap_or(20) as f32;
+        let temp = temperature.unwrap_or(20);
 
-        let speed_factor = (331.3 + 0.606 * temp) / 10_000.0;
+        let speed_factor = (331.3 + 0.606 * temp as f32) / 10_000.0;
         let distance_cm = duration as f32 * speed_factor;
 
-        Some(distance_cm)
+        Ok((distance_cm, temp))
     }
 }
