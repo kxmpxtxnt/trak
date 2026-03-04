@@ -1,4 +1,5 @@
-mod users;
+mod db;
+mod trak_config;
 
 use anyhow::Result;
 use axum::Router;
@@ -11,6 +12,8 @@ pub async fn main() -> Result<()> {
 
     let bind_addr = var("TRAK_SERVER_ADDR").unwrap_or("127.0.0.1".to_string());
     let bind_port = var("TRAK_SERVER_PORT").unwrap_or("8642".to_string());
+
+    let jdbc_url = var("TRAK_POSTGRES_URL").expect("TRAK_POSTGRES_URL must be set.");
 
     let router = Router::new();
     let listener = tokio::net::TcpListener::bind(format!("{}:{}", bind_addr, bind_port)).await?;

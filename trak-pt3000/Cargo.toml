@@ -8,6 +8,8 @@ version = "0.1.0"
 name = "trak-pt3000"
 path = "src/main.rs"
 test = false
+doctest = false
+bench = false
 
 [dependencies]
 defmt = "1.0.1"
