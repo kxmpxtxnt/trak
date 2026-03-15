@@ -13,7 +13,7 @@ Furthermore, there should be the possibility to do this tracking with your frien
   - [ ] Sports Tracker
 - [ ] PT3000 (Even tough this is probably the project I am most excited about in my life so far, I am very aware that
   it is also likely to be the most challenging.)
-- [ ] Period tracker (Even tough I would love to include it in the VIP section, I believe that this area requires
+- [ ] "Trak period" (Even tough I would love to include it in the VIP section, I believe that this area requires
   significantly more research and knowledge than I have.)
 - [ ] "Trak together" (Best case scenario I implement all the other features/trackers In a way which will allow me to
   easily adopt the together feature (It will probably take a few rewrites :D))
