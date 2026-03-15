@@ -10,7 +10,7 @@ Furthermore, there should be the possibility to do this tracking with your frien
 - [ ] Create a VIP
   - [ ] Multiplatform (Web, Desktop, Android, (IOS maybe, sorry apple friends))
   - [ ] Nutrition Tracker
-  - [ ] Spots Tracker
+  - [ ] Sports Tracker
 - [ ] PT3000 (Even tough this is probably the project I am most excited about in my life so far, I am very aware that
   it is also likely to be the most challenging.)
 - [ ] Period tracker (Even tough I would love to include it in the VIP section, I believe that this area requires
