@@ -18,12 +18,15 @@ repositories {
     gradlePluginPortal()
 }
 
+group = "fyi.pauli"
+version = "1.0.0"
+
 android {
     namespace = "${project.group}.trak"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "fyi.pauli.trak"
+        applicationId = "${project.group}.trak"
         minSdk = 24
         targetSdk = 36
         versionCode = rootProject.version.toString().replace(".", "").toInt()

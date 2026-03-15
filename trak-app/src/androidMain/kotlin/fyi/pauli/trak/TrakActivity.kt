@@ -16,12 +16,10 @@ class TrakActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-
             val draftData by draftUserData.collectAsState(null)
+            val finished = draftData?.isFinished ?: false
 
-            println("IsFinished: ${draftData?.isFinished}")
-
-            if (!(draftData?.isFinished ?: false)) {
+            if (draftData == null || !finished) {
                 Navigator(Setup.Intro)
             }
         }

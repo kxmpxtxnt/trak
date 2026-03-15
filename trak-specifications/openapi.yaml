@@ -1,5 +1,86 @@
 openapi: 3.1.0
+servers:
+  - url: http://localhost:8642/api
+    description: Development
+  - url: https://trak.pauli.fyi/api
+    description: Globally accessible managed version of trak.
+
+
 info:
   title: Trak API
   version: 1.0.0
+
 paths:
+  /v1/auth/register:
+    post:
+      summary: Register a new account.
+      description: Tries to register a new account. Will return a uuid, which is the new user id, as well as a boolean identifying if the provided login will be used as an email.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/registerRequest"
+      responses:
+        '201':
+          description: Account created.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/registerResponse"
+        '409':
+          description: Login is already used.
+        '403':
+          description: Used login is not allowed.
+  /v1/auth/login:
+    summary: Grants access for a account.
+    put:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/loginRequest"
+      responses:
+        '202':
+          description: Logged in.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/loginResponse"
+        '401':
+          description: Invalid login credentials.
+
+components:
+  schemas:
+    registerRequest:
+      properties:
+        name:
+          type: [ string ]
+        login:
+          type: [ string ]
+        password:
+          type: [ string ]
+    registerResponse:
+      properties:
+        id:
+          type: [ string ]
+        login_is_mail:
+          type: [ boolean ]
+    loginRequest:
+      properties:
+        login:
+          type: [ string ]
+        password:
+          type: [ string ]
+    loginResponse:
+      properties:
+        id:
+          type: [ string ]
+        token:
+          $ref: "#/components/schemas/token"
+    token:
+      properties:
+        auth_token:
+          type: [ string ]
+        refresh_token:
+          type: [ string ]

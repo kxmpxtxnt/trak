@@ -218,6 +218,7 @@ iOSInjectionProject/
 .gradle
 **/build/
 !src/**/build/
+!trak-app/local.properties
 
 # Ignore Gradle GUI config
 gradle-app.setting

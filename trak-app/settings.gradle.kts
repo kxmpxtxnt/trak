@@ -1,8 +1,4 @@
-rootProject.name = "trak"
-
-include(
-    ":trak-app",
-)
+rootProject.name = "trak-app"
 
 pluginManagement {
     repositories {
