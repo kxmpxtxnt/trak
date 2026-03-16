@@ -22,7 +22,7 @@ impl Auth {
         Ok(result.login_is_email.unwrap_or(false))
     }
 
-    async fn password_hash_string(&self, pool: &PgPool) -> Result<PasswordHashString> {
+    pub async fn password_hash_string(&self, pool: &PgPool) -> Result<PasswordHashString> {
         let result = query!(
             "SELECT trak.public.auth.password_hash FROM trak.public.auth WHERE trak.public.auth.login = $1",
             self.login
@@ -31,6 +31,17 @@ impl Auth {
             .await?;
 
         Ok(PasswordHashString::new(&*result.password_hash)?)
+    }
+
+    pub async fn user_id(&self, pool: &PgPool) -> Result<uuid::Uuid> {
+        let result = query!(
+            "SELECT trak.public.auth.id FROM trak.public.auth WHERE trak.public.auth.login = $1",
+            self.login
+        )
+            .fetch_one(pool)
+            .await?;
+        
+        Ok(result.id)
     }
 }
 
