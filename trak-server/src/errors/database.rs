@@ -11,5 +11,5 @@ pub enum Error {
     #[error("Error while creating user with user id ({0}). - {1}")]
     CreateUser(String, sqlx::error::Error),
     #[error("Error while creating auth with user id ({0}). - {1}")]
-    CreateUserAuth(String, sqlx::error::Error)
+    CreateUserAuth(String, sqlx::error::Error),
 }

@@ -2,7 +2,7 @@ use crate::entities::auth;
 use crate::entities::auth::create_user_auth;
 use crate::errors::database;
 use anyhow::Result;
-use sqlx::{query};
+use sqlx::query;
 use uuid::Timestamp;
 
 pub struct User {
@@ -25,9 +25,9 @@ pub async fn create_user(user: &User, password: &str, pool: &sqlx::PgPool) -> Re
         user.id,
         user.name
     )
-    .execute(pool)
-    .await
-    .map_err(|err| database::Error::CreateUser(user.id.to_string(), err))?;
+        .execute(pool)
+        .await
+        .map_err(|err| database::Error::CreateUser(user.id.to_string(), err))?;
 
     Ok(())
 }
@@ -37,9 +37,9 @@ pub async fn get_user(id: &uuid::Uuid, pool: &sqlx::PgPool) -> Result<User> {
         "SELECT trak.public.users.name FROM trak.public.users WHERE trak.public.users.id = $1;",
         id
     )
-    .fetch_one(pool)
-    .await
-    .map_err(|err| database::Error::GetUser(id.to_string(), err))?;
+        .fetch_one(pool)
+        .await
+        .map_err(|err| database::Error::GetUser(id.to_string(), err))?;
 
     let auth = auth::get_user_auth(id, pool).await?;
 

@@ -17,7 +17,7 @@ pub struct RegisterBody {
 }
 
 #[derive(Serialize)]
-struct RegisterResponse {
+pub struct RegisterResponse {
     id: String,
     login_is_mail: bool,
 }

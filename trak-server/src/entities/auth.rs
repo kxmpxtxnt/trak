@@ -16,8 +16,8 @@ impl Auth {
             "SELECT trak.public.auth.login_is_email FROM trak.public.auth WHERE trak.public.auth.login = $1",
             self.login
         )
-        .fetch_one(pool)
-        .await?;
+            .fetch_one(pool)
+            .await?;
 
         Ok(result.login_is_email.unwrap_or(false))
     }
@@ -27,8 +27,8 @@ impl Auth {
             "SELECT trak.public.auth.password_hash FROM trak.public.auth WHERE trak.public.auth.login = $1",
             self.login
         )
-        .fetch_one(pool)
-        .await?;
+            .fetch_one(pool)
+            .await?;
 
         Ok(PasswordHashString::new(&*result.password_hash)?)
     }
@@ -39,9 +39,9 @@ pub async fn login_exists(login: &str, pool: &PgPool) -> Result<bool> {
         "SELECT EXISTS (SELECT 1 FROM trak.public.auth WHERE trak.public.auth.login = $1)",
         login
     )
-    .fetch_one(pool)
-    .await
-    .map_err(|err| database::Error::GetUserAuthByLogin(login.to_string(), err))?;
+        .fetch_one(pool)
+        .await
+        .map_err(|err| database::Error::GetUserAuthByLogin(login.to_string(), err))?;
 
     Ok(result.exists.unwrap_or(false))
 }
@@ -69,9 +69,9 @@ pub async fn create_user_auth(
         auth.login.clone(),
         hash_string.to_string()
     )
-    .execute(pool)
-    .await
-    .map_err(|err| database::Error::CreateUserAuth(id.to_string(), err))?;
+        .execute(pool)
+        .await
+        .map_err(|err| database::Error::CreateUserAuth(id.to_string(), err))?;
 
     Ok(())
 }
@@ -81,9 +81,9 @@ pub async fn get_user_auth(id: &uuid::Uuid, pool: &PgPool) -> Result<Auth> {
         "SELECT trak.public.auth.login FROM trak.public.auth WHERE trak.public.auth.id = $1",
         id
     )
-    .fetch_one(pool)
-    .await
-    .map_err(|err| database::Error::GetUserAuthById(id.to_string(), err))?;
+        .fetch_one(pool)
+        .await
+        .map_err(|err| database::Error::GetUserAuthById(id.to_string(), err))?;
 
     Ok(Auth { login: auth.login })
 }

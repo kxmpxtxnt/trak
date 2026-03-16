@@ -1,7 +1,7 @@
-use axum::Router;
-use axum::routing::post;
-use crate::routes::AppInject;
 use crate::routes::v1::auth::register::register_route;
+use crate::routes::AppInject;
+use axum::routing::post;
+use axum::Router;
 
 pub mod register;
 
