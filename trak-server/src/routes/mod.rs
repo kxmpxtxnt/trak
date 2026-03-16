@@ -1,4 +1,5 @@
 pub mod v1;
+pub mod specs;
 
 use crate::routes::v1::auth::auth_router;
 use axum::Router;

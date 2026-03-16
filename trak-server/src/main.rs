@@ -5,17 +5,18 @@ pub mod routes;
 pub mod util;
 
 use crate::persistence::postgres::init_pool;
+use crate::routes::specs::specs_router;
 use crate::routes::{v1_router, AppInject};
 use crate::util::logging::init_logging;
 use anyhow::Result;
 use axum::Router;
 use std::env::var;
-use tracing::info;
+use tracing::info; 
 
 #[tokio::main]
 pub async fn main() -> Result<()> {
     let debug: bool = var("TRAK_DEBUG")
-        .unwrap_or("".to_string())
+        .unwrap_or("false".to_string())
         .parse()
         .unwrap_or(false);
 
@@ -25,6 +26,7 @@ pub async fn main() -> Result<()> {
     let bind_port = var("TRAK_SERVER_PORT").unwrap_or("8642".to_string());
 
     let router = Router::new()
+        .nest("/api/specs/", specs_router())
         .nest("/api/v1/", v1_router())
         .with_state(AppInject {
             pool: init_pool().await?,
