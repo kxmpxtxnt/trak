@@ -74,11 +74,13 @@ components:
       properties:
         id:
           type: [ string ]
-        token:
+        access_token:
+          $ref: "#/components/schemas/token"
+        refresh_token:
           $ref: "#/components/schemas/token"
     token:
       properties:
-        auth_token:
+        token:
           type: [ string ]
-        refresh_token:
-          type: [ string ]
+        expiration_date:
+          type: [ integer ]
