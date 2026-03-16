@@ -8,9 +8,9 @@ Furthermore, there should be the possibility to do this tracking with your frien
 # TODO
 
 - [ ] Create a VIP
-  - [ ] Multiplatform (Web, Desktop, Android, (IOS maybe, sorry apple friends))
-  - [ ] Nutrition Tracker
-  - [ ] Sports Tracker
+    - [ ] Multiplatform (Web, Desktop, Android, (IOS maybe, sorry apple friends))
+    - [ ] Nutrition Tracker
+    - [ ] Sports Tracker
 - [ ] PT3000 (Even tough this is probably the project I am most excited about in my life so far, I am very aware that
   it is also likely to be the most challenging.)
 - [ ] "Trak period" (Even tough I would love to include it in the VIP section, I believe that this area requires
@@ -25,7 +25,6 @@ Furthermore, there should be the possibility to do this tracking with your frien
 - Well documentate the whole thing (scary!!!)
 - Create a tracking device (pt3000) which is easy and cheap to build yourself
 - Integrate LLMs in a modern smart way to make experience better for users
-
 - (get rid of all the "Even tough" in this file)
 
 # Antigoals
