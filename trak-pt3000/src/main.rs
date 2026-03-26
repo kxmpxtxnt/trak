@@ -59,7 +59,7 @@ fn main() -> ! {
             }
         };
 
-        let measurement = hcsr04.measure(temp);
+        let measurement = hcsr04.measure(temp).unwrap();
 
         match hcsr04.measure(temp) {
             Ok((distance, temperature)) => {
