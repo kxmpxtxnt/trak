@@ -5,9 +5,8 @@
     reason = "mem::forget is generally not safe to do with esp_hal types, especially those \
     holding buffers for the duration of a data transfer."
 )]
-mod modules;
+mod driver;
 
-use crate::modules::hc_sr04::HcSr04;
 use core::panic::PanicInfo;
 use embedded_dht_rs::dht11::Dht11;
 use esp_hal::delay::Delay;
@@ -17,6 +16,7 @@ use esp_hal::{clock::CpuClock, main, rmt::Rmt, time::Rate};
 use esp_hal_smartled::{smart_led_buffer, SmartLedsAdapter};
 use esp_println::println;
 use smart_leds::{SmartLedsWrite, RGB8};
+use crate::driver::hc_sr04::HcSr04;
 
 esp_bootloader_esp_idf::esp_app_desc!();
 
